@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            height: 500px;
+            width: 300px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class='col1'>
+        <h1>Add a New Word</h1>
+        <form action='/process' method='post'>
+            {% csrf_token %}
+            <input type='text' name='word'>
+            <br>
+            <select name="color">
+                <option value="Red">Red</option>
+                <option value="Orange">Orange</option>
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+            </select>
+            <br>
+            <input type='submit' value='create user'>
+        </form>
+    </div>
+    <div class='col2'>
+
+        <p>{{request.session.word}}</p>
+
+
+
+    </div>
+</body>
+
+</html>
